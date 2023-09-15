@@ -1,8 +1,8 @@
 [
     {
       "id": 1,
-      "course_name": "Introduction to Programming",
-      "img": "https://i.ibb.co/SRKrN4v/Rectangle-2-2.png",
+      "course_name": "Web Development",
+      "img": "https://i.ibb.co/Gk7JgMT/course-Thumbnail-cdaf4694.jpg",
       "credit": 8,
       "price": 25000,
       "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
