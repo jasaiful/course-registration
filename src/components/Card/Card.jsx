@@ -3,7 +3,7 @@ import { FaBeer } from 'react-icons/fa';
 
 
 
-const Card = ({ card, handleToSelectCourse }) => {
+const Card = ({ card, handleToSelectCourse, setCount }) => {
     const { course_name, img, details, price, credit } = card;
 
     return (
@@ -23,7 +23,7 @@ const Card = ({ card, handleToSelectCourse }) => {
                     </div>
 
                 </div>
-                <button onClick={() => handleToSelectCourse(card)}
+                <button onClick={() => { handleToSelectCourse(card); setCount(credit); }}
                     className='w-full bg-blue-500 rounded-xl p-1 text-white'>Select</button>
             </div>
         </div>
@@ -32,7 +32,8 @@ const Card = ({ card, handleToSelectCourse }) => {
 
 Card.propTypes = {
     card: PropTypes.object.isRequired,
-    handleToSelectCourse: PropTypes.func
+    handleToSelectCourse: PropTypes.func,
+    setCount: PropTypes.func
 }
 
 

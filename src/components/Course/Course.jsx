@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 
 const Course = ({ course }) => {
 
-    const { course_name } = course;
+    const { course_name, id } = course;
     return (
         <div>
-            <ol> {course_name} </ol>
+            <ol>{id}.{course_name}</ol>
+            
         </div>
+        
     );
 };
 

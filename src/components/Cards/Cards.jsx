@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 
 
-const Cards = ({handleToSelectCourse}) => {
+const Cards = ({ handleToSelectCourse, setCount}) => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
@@ -22,6 +22,7 @@ const Cards = ({handleToSelectCourse}) => {
                 cards.map(card => <Card
                     key={card.id}
                     card={card}
+                    setCount={setCount}
                     handleToSelectCourse={handleToSelectCourse}
                 ></Card>)
 
@@ -32,7 +33,8 @@ const Cards = ({handleToSelectCourse}) => {
 };
 
 Cards.propTypes = {
-    handleToSelectCourse: PropTypes.func
+    handleToSelectCourse: PropTypes.func,
+    setCount: PropTypes.func
 }
 
 export default Cards;
