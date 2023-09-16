@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import { FaBeer} from 'react-icons/fa';
+import { FaBeer } from 'react-icons/fa';
 
 
 
-const Card = ({ card }) => {
+const Card = ({ card, handleToSelectCourse }) => {
     const { course_name, img, details, price, credit } = card;
 
     return (
@@ -18,12 +18,13 @@ const Card = ({ card }) => {
                         <p>Price: {price}</p>
                     </div>
                     <div className='flex gap-2'>
-                    <button><FaBeer></FaBeer></button>
+                        <button><FaBeer></FaBeer></button>
                         Credit: {credit}
                     </div>
 
                 </div>
-                <button className='w-full bg-blue-500 rounded-xl p-1 text-white'>Select</button>
+                <button onClick={() => handleToSelectCourse(card)}
+                    className='w-full bg-blue-500 rounded-xl p-1 text-white'>Select</button>
             </div>
         </div>
     );
@@ -31,6 +32,7 @@ const Card = ({ card }) => {
 
 Card.propTypes = {
     card: PropTypes.object.isRequired,
+    handleToSelectCourse: PropTypes.func
 }
 
 

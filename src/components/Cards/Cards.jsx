@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import Card from "../Card/Card";
+import PropTypes from 'prop-types';
 
 
 
-const Cards = () => {
+
+const Cards = ({handleToSelectCourse}) => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
@@ -20,6 +22,7 @@ const Cards = () => {
                 cards.map(card => <Card
                     key={card.id}
                     card={card}
+                    handleToSelectCourse={handleToSelectCourse}
                 ></Card>)
 
             }
@@ -27,5 +30,9 @@ const Cards = () => {
         </div>
     );
 };
+
+Cards.propTypes = {
+    handleToSelectCourse: PropTypes.func
+}
 
 export default Cards;
