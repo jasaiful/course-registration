@@ -26,11 +26,17 @@ function App() {
       course.forEach((card) => {
         courseCredit += card.credit;
       });
-      const totalRemaining = 20-courseCredit;
-      setTotalCredit(courseCredit);
-      setRemaining(totalRemaining);
-      const selectedCourse = [...course, card];
-      setCourse(selectedCourse);
+      const totalRemaining = 20 - courseCredit;
+      if (courseCredit > 20) {
+        return toast.error('Credit hour finished', {
+          position: 'top-right'
+        });
+      } else {
+        setTotalCredit(courseCredit);
+        setRemaining(totalRemaining);
+        const selectedCourse = [...course, card];
+        setCourse(selectedCourse);
+      }
     }
 
   }
