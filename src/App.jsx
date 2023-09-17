@@ -11,9 +11,11 @@ function App() {
   const [course, setCourse] = useState([]);
   const [totalCredit, setTotalCredit] = useState(0)
   const [remaining, setRemaining] = useState(0)
+  const [totalCoursePrice, setTotalCoursePrice] = useState(0)
   const handleToSelectCourse = card => {
 
     let courseCredit = card.credit;
+    let totalPrice = card.price;
     const isExisting = course.find(course => course.id === card.id)
 
     if (isExisting) {
@@ -25,6 +27,7 @@ function App() {
 
       course.forEach((card) => {
         courseCredit += card.credit;
+        totalPrice += card.price;
       });
       const totalRemaining = 20 - courseCredit;
       if (courseCredit > 20) {
@@ -34,6 +37,7 @@ function App() {
       } else {
         setTotalCredit(courseCredit);
         setRemaining(totalRemaining);
+        setTotalCoursePrice(totalPrice);
         const selectedCourse = [...course, card];
         setCourse(selectedCourse);
       }
@@ -53,6 +57,7 @@ function App() {
           course={course}
           totalCredit={totalCredit}
           remaining={remaining}
+          totalCoursePrice={totalCoursePrice}
         ></Cart>
       </main>
     </>

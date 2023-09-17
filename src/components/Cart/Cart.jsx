@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Course from '../Course/Course';
 
-const Cart = ({ course, totalCredit, remaining }) => {
+const Cart = ({ course, totalCredit, remaining, totalCoursePrice }) => {
     
     return (
         <div className="md: w-1/4 mx-auto bg-white h-full rounded-xl p-2">
@@ -24,7 +24,7 @@ const Cart = ({ course, totalCredit, remaining }) => {
                 <hr />
             </div>
             <div>
-                <h4 className="text-lg font-semibold my-5">Total Price: USD</h4>
+                <h4 className="text-lg font-semibold my-5">Total Price: {totalCoursePrice} USD</h4>
             </div>
 
         </div>
@@ -34,7 +34,8 @@ const Cart = ({ course, totalCredit, remaining }) => {
 Cart.propTypes = {
     course: PropTypes.array,
     totalCredit: PropTypes.func,
-    remaining: PropTypes.func
+    remaining: PropTypes.func,
+    totalCoursePrice: PropTypes.func
 };
 
 export default Cart;
