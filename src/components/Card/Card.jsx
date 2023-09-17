@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { FaBeer } from 'react-icons/fa';
+import { FaDollarSign, FaBookOpen } from 'react-icons/fa';
 
 
 
@@ -14,11 +14,11 @@ const Card = ({ card, handleToSelectCourse, setCount }) => {
                 <p className='text-sm'>{details}</p>
                 <div className='flex justify-between'>
                     <div className='flex gap-2'>
-                        <button><FaBeer></FaBeer></button>
-                        <p>Price: {price}</p>
+                    <button><FaDollarSign/></button>
+                    <p>Price: {price}</p>
                     </div>
                     <div className='flex gap-2'>
-                        <button><FaBeer></FaBeer></button>
+                        <button><FaBookOpen/></button>
                         Credit: {credit}
                     </div>
 
