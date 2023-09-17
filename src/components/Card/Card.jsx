@@ -7,7 +7,7 @@ const Card = ({ card, handleToSelectCourse, setCount }) => {
     const { course_name, img, details, price, credit } = card;
 
     return (
-        <div className='bg-white p-3 rounded-xl'>
+        <div className='bg-white p-3 w-full rounded-xl'>
             <div className='space-y-3'>
                 <img src={img} alt={`cover picture of course ${course_name}`} />
                 <h3 className='text-lg font-semibold' >{course_name}</h3>

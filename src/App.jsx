@@ -48,7 +48,7 @@ function App() {
     <>
       <ToastContainer></ToastContainer>
       <Header></Header>
-      <main className='md:flex max-w-7xl mx-auto gap-5 mt-3'>
+      <main className='max-w-7xl md:flex w-full mx-auto gap-5 mt-3'>
         <Cards
           handleToSelectCourse={handleToSelectCourse}
 

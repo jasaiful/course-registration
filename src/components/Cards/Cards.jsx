@@ -15,9 +15,8 @@ const Cards = ({ handleToSelectCourse, setCount}) => {
             .then(data => setCards(data))
     }, [])
 
-
     return (
-        <div className="md: w-3/4 grid grid-cols-3 gap-5">
+        <div className="md:w-3/4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {
                 cards.map(card => <Card
                     key={card.id}
