@@ -9,22 +9,30 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
 
   const [course, setCourse] = useState([]);
-  const [count, setCount] = useState(0)
+  const [totalCredit, setTotalCredit] = useState(0)
+  const [remaining, setRemaining] = useState(0)
   const handleToSelectCourse = card => {
 
-    const existing = course.find(course => course.id === card.id)
-    console.log(existing);
+    let courseCredit = card.credit;
+    const isExisting = course.find(course => course.id === card.id)
 
-    if (existing) {
-      toast.error('Duplicate Entry Found!', {
+    if (isExisting) {
+      toast.error('already selected!', {
         position: 'top-center'
       });
     }
     else {
+
+      course.forEach((card) => {
+        courseCredit += card.credit;
+      });
+      const totalRemaining = 20-courseCredit;
+      setTotalCredit(courseCredit);
+      setRemaining(totalRemaining);
       const selectedCourse = [...course, card];
       setCourse(selectedCourse);
     }
-  
+
   }
   return (
     <>
@@ -33,11 +41,12 @@ function App() {
       <main className='md:flex max-w-6xl mx-auto gap-5 mt-3'>
         <Cards
           handleToSelectCourse={handleToSelectCourse}
-          setCount={setCount}
+
         ></Cards>
         <Cart
           course={course}
-          count={count}
+          totalCredit={totalCredit}
+          remaining={remaining}
         ></Cart>
       </main>
     </>
